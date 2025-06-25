@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Sanskar Academy | Excellence in Education Since 1998</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3e72;
+      --secondary: #b38b59;
+      --accent: #e31837;
+      --light: #f8f7f2;
+      --dark: #222;
+      --text: #333;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      transition: var(--transition);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text h1 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+
+    .logo-text span {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: var(--secondary);
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      padding: 5px 0;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: var(--primary);
+      margin: 5px 0;
+      transition: var(--transition);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('schoolimg.jpg') no-repeat ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 90px;
+      width: 100%;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: var(--transition);
+      border: 2px solid var(--secondary);
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: var(--secondary);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid white;
+      margin-left: 15px;
+    }
+
+    .btn-outline:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .announcement-bar p {
+      font-size: 16px;
+    }
+
+    .announcement-bar a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 400px;
+    }
+
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover video{
+      transform: scale(1.1);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--primary);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial-item {
+      padding: 0 20px;
+    }
+
+    .testimonial-text {
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* News Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .news-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .news-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.1);
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-date {
+      color: var(--secondary);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .news-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .news-excerpt {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .read-more {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      height: 60px;
+    }
+
+    .footer-about p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-links h3, .footer-contact h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h3::after, .footer-contact h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .contact-icon {
+      color: var(--secondary);
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 250px;
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: var(--transition);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      
+      nav ul.active {
+        left: 0;
+      }
+      
+      nav ul li {
+        margin: 15px 0;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        margin-top: 70px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
+      }
+      
+      .section-title h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>Admissions Open for 2025 – <a href="#">Enroll Now</a></p>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <img src="finallogo.png" alt="New Sanskar Academy Logo">
+        <div class="logo-text">
+          <h1>New Sanskar Academy</h1>
+          <span>Excellence in Education Since 1998</span>
+        </div>
+      </a>
+      
+      <nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#sports">Sports</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>AN ENDURING LEGACY OF EXCELLENCE IN EDUCATION</h1>
+      <p>SINCE 1998</p>
+      <div class="hero-buttons">
+        <a href="#curriculum" class="btn">Explore Academics</a>
+        <a href="#events" class="btn btn-outline">Virtual Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="section-title">
+        <h2>About New Sanskar Academy</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>New Sanskar Academy School is a vibrant institution committed to nurturing young minds with a perfect blend of modern education and traditional values. The school fosters academic excellence, creativity, and character development in a safe and inclusive environment.</p>
+          <p>With experienced faculty, well-equipped classrooms, and a focus on holistic growth, it empowers students to become confident, responsible citizens. Emphasizing discipline, innovation, and moral values, New Sanskar Academy is shaping the leaders of tomorrow through quality education and compassionate guidance.</p>
+          <a href="#about" class="btn">Learn More</a>
+        </div>
+        <div class="about-image">
+          <img src="Schoolimg2.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section" id="curriculum">
+      <div class="section-title">
+        <h2>Our Curriculum</h2>
+      </div>
+      <div class="gallery">
+        <div class="gallery-item">
+          <video controls src="cricketvid1.mp4"></video>
+        </div>
+        <div class="gallery-item">
+          <video controls src="janmastmi1.mp4"></video>
+        </div>
+        <div class="gallery-item">
+          <video controls  src="janmastmi2.mp4"></video>
+        </div>
+        <div class="gallery-item">
+          <video src="janmastmivid1.mp4" controls></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section class="section" id="sports">
+      <div class="section-title">
+        <h2>Sports & Activities</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>We believe in holistic education. Sports help build discipline, teamwork, and a healthy lifestyle. Our facilities support a wide range of indoor and outdoor games including cricket, football, basketball, badminton, and more.</p>
+          <a href="#sports" class="btn">View Facilities</a>
+        </div>
+        <div class="about-image">
+          <img src="playg.jpg" alt="Sports Activities">
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <!-- <section class="section" id="events">
+      <div class="section-title">
+        <h2>Events & Celebrations</h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cultural Event">
+          </div>
+          <div class="news-content">
+            <p class="news-date">April 10, 2023</p>
+            <h3 class="news-title">Cultural Fest Success</h3>
+            <p class="news-excerpt">Our annual cultural fest celebrated the diverse talents of our student community.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Science Fair">
+          </div>
+          <div class="news-content">
+            <p class="news-date">May 28, 2023</p>
+            <h3 class="news-title">Science Fair Winners</h3>
+            <p class="news-excerpt">Congratulations to our students who won accolades at the regional science fair competition.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sports Day">
+          </div>
+          <div class="news-content">
+            <p class="news-date">June 15, 2023</p>
+            <h3 class="news-title">Annual Sports Day 2023</h3>
+            <p class="news-excerpt">Our students showcased their athletic talents in the much-anticipated Annual Sports Day event.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="section-title">
+        <h2 style="color: white;">What Our Community Says</h2>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">
+          <p class="testimonial-text">"New Sanskar Academy has provided my child with an environment that fosters both academic excellence and personal growth. The teachers are dedicated and the facilities are outstanding."</p>
+          <p class="testimonial-author">- Parent of Grade 10 Student</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Our Core Values</h2>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Vision</h3>
+          <p>To inspire lifelong learning, encourage responsibility, and instill integrity in every student.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Mission</h3>
+          <p>To foster a nurturing environment that develops curiosity, creativity, and confidence in every learner.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Philosophy</h3>
+          <p>To blend traditional values with modern teaching methods, encouraging independent and critical thinking.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="finallogo.png" alt="New Sanskar Academy Logo">
+        </div>
+        <p>New Sanskar Academy is committed to providing quality education that combines academic excellence with strong moral values.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/new_sanskar_academy_h.s.school/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#sports">Sports</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <p>New Sanskar Academy School, Dhannad Khurd behind Pinnacle Pithampur M.P</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <p>newsanskaracademy@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <p>+91-9827644999 / 022-5674384 / 022-6876673</p>
+          </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.5573481165147!2d75.69580170299908!3d22.62095155417022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962561417e44597%3A0x1dad1e342e2dc87e!2sNEW%20SANSKAR%20ACADMEY%20HIGH%20SCHOOL!5e1!3m2!1sen!2sin!4v1750843457019!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 New Sanskar Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.padding = '10px 0';
+      } else {
+        header.style.padding = '15px 0';
+      }
+    });
+
+    // Animation on Scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.section, .feature-card, .gallery-item, .news-card');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    // Set initial state for animation
+    document.querySelectorAll('.section, .feature-card, .gallery-item, .news-card').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Run once on load
+    window.addEventListener('load', animateOnScroll);
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>
